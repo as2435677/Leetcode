@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int s_i = 0, e_i = numbers.size()-1;
+        while(s_i < e_i){
+            if(numbers[s_i] + numbers[e_i] < target){
+                s_i ++;
+            }
+            else if(numbers[s_i] + numbers[e_i] > target){
+                e_i --;
+            }
+            else{
+                return {s_i+1, e_i+1};
+            }
+        }
+        return {};
+    }
+};

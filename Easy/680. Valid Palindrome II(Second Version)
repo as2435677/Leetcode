@@ -1,0 +1,29 @@
+class Solution {
+public:
+    bool isPalindrome(string s, int from, int end){
+        while(from < end){
+            if(s[from] != s[end]){
+                return 0;
+            }
+            else{
+                from++;
+                end--;
+            }
+        }
+        return 1;
+    }
+    
+    bool validPalindrome(string s) {
+        int i = 0, j = s.size() - 1;
+        while(i < j){
+            if(s[i] != s[j]){
+                return isPalindrome(s, i+1, j) || isPalindrome(s, i, j-1);
+            }
+            else{
+                i++;
+                j--;
+            }
+        }
+        return 1;
+    }
+};

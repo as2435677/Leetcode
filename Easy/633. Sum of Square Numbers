@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool judgeSquareSum(int c) {
+        long i = 0, j = floor(sqrt(c));
+        long answer;
+        if(c < 0){
+            return 0;
+        }
+        while(i <= j){
+           answer = (i * i) + (j * j);
+           if(answer < c){
+               i++;
+           }
+           else if(answer > c){
+               j--;
+           }
+           else{
+               return 1;
+           }
+            
+        }
+        return 0;
+    }
+};
